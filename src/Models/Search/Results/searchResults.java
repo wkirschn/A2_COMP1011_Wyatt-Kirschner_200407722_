@@ -1,4 +1,4 @@
-package Models;
+package Models.Search.Results;
 
 
 // https://spoonacular.com/food-api/docs/show-images
@@ -10,7 +10,7 @@ package Models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class InitialQuery {
+public class searchResults {
     @SerializedName("id")
     private int id;
 

@@ -1,13 +1,12 @@
-package Models;
-
+package Models.Search;
+// TOP -> searchResults
 import com.google.gson.annotations.SerializedName;
 
 public class SpoonacularJsonResponse {
 
     //Contains id (int), name (string), image (string)
 
-    @SerializedName("results")
-    private String results;
+    private Models.Search.Results.searchResults[] searchResults;
 
     @SerializedName("offset")
     private int offset;
