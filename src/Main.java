@@ -16,7 +16,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("Views/searchFoodView.fxml"));
-        primaryStage.setScene(new Scene(root, 1000, 600)); //800, 600
+        primaryStage.setScene(new Scene(root, 1000, 700)); //800, 600
         primaryStage.getIcons().add(new Image("Images/Nutritious_icon.png"));
         root.getStylesheets().add("Views/stylesheet.css");
         primaryStage.setTitle("Nutritious - Search");
