@@ -1,4 +1,4 @@
-package Utilities;
+/*package Utilities;
 // API KEY: 5fec8b624e914a81b3e359d38938c941 // https://api.spoonacular.com/?apiKey=5fec8b624e914a81b3e359d38938c941
 // The initial request is ?, followed by &
 // https://api.spoonacular.com/recipes/716429/information?apiKey=5fec8b624e914a81b3e359d38938c941&includeNutrition=true
@@ -17,4 +17,4 @@ public class FoodUtility {
 
     public static ArrayList<>
 
-}
+}*/
