@@ -31,7 +31,7 @@ public class Main extends Application {
         //launch(args);
 
         try {
-            FoodUtility.SpoonacularJsonResponse("sugar");
+            FoodUtility.getSearchResponse("waffle");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -39,7 +39,7 @@ public class Main extends Application {
         }
 
         try {
-            FoodUtility.foodNutritionCentral("19335");
+            FoodUtility.getFoodQuery("19335");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
