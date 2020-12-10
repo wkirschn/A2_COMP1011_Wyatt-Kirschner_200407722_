@@ -8,7 +8,7 @@ package Models.Food.Nutrition.Detailed;
 
 import com.google.gson.annotations.SerializedName;
 
-public class foodNutrients {
+public class nutrients {
 
     @SerializedName("title")
     private String title;
@@ -19,7 +19,7 @@ public class foodNutrients {
     @SerializedName("unit")
     private String unit;
 
-    public foodNutrients(String title, double amount, String unit) {
+    public nutrients(String title, double amount, String unit) {
         setTitle(title);
         setAmount(amount);
         setUnit(unit);

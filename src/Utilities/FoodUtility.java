@@ -20,6 +20,7 @@ public class FoodUtility {
     public static ArrayList<>
 
 }*/
+import Models.Food.SingleFoodQuery;
 import Utilities.*;
 import com.google.gson.Gson;
 
@@ -31,15 +32,15 @@ import java.io.FileReader;
 
 public class FoodUtility {
 
-    public static SpoonacularJsonResponse getFoodResults(File jsonFile) {
+    public static SingleFoodQuery getFoodResults(File jsonFile) {
         Gson gson = new Gson();
-        SpoonacularJsonResponse searchResult = null;
+        SingleFoodQuery searchResult = null;
 
         try (
                 FileReader fileReader = new FileReader(jsonFile);
                 JsonReader jsonReader = new JsonReader(fileReader);
         ) {
-            searchResult = gson.fromJson(jsonReader, SpoonacularJsonResponse.class);
+            searchResult = gson.fromJson(jsonReader, SingleFoodQuery.class);
             System.out.println(searchResult);
 
         } catch (Exception e) {

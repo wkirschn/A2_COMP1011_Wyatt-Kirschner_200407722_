@@ -8,7 +8,7 @@ package Models.Food.Nutrition;
 
 import com.google.gson.annotations.SerializedName;
 
-public class foodCaloricBreakdown {
+public class caloricBreakdown {
     @SerializedName("percentProtein")
     private double percentProtein;
 
@@ -18,7 +18,7 @@ public class foodCaloricBreakdown {
     @SerializedName("percentCarbs")
     private double percentCarbs;
 
-    public foodCaloricBreakdown(double percentProtein, double percentFat, double percentCarbs) {
+    public caloricBreakdown(double percentProtein, double percentFat, double percentCarbs) {
         setPercentProtein(percentProtein);
         setPercentFat(percentFat);
         setPercentCarbs(percentCarbs);

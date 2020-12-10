@@ -1,13 +1,13 @@
 package Models.Search;
 // TOP -> searchResults
-import Models.Search.Results.searchResults;
+import Models.Search.Results.results;
 import com.google.gson.annotations.SerializedName;
 
 public class SpoonacularJsonResponse {
 
     //Contains id (int), name (string), image (string)
 
-    private Models.Search.Results.searchResults[] searchResults;
+    private Models.Search.Results.results[] results;
 
     //May not need since I can request for all. Starts at 0 but if I wanted to, set to 10, 20, 30 for pages
 
@@ -24,9 +24,9 @@ public class SpoonacularJsonResponse {
     @SerializedName("totalResults")
     private int totalResults;
 
-    public SpoonacularJsonResponse(Models.Search.Results.searchResults[] searchResults,
+    public SpoonacularJsonResponse(Models.Search.Results.results[] searchResults,
                                    int offset, int number, int totalResults) {
-        setSearchResults(searchResults);
+        setSearchResults(results);
         setOffset(offset);
         setNumber(number);
         setTotalResults(totalResults);
@@ -50,12 +50,12 @@ public class SpoonacularJsonResponse {
 
 
 
-    public Models.Search.Results.searchResults[] getSearchResults() {
-        return searchResults;
+    public Models.Search.Results.results[] getSearchResults() {
+        return results;
     }
 
-    public void setSearchResults(Models.Search.Results.searchResults[] searchResults) {
-        this.searchResults = searchResults;
+    public void setSearchResults(Models.Search.Results.results[] searchResults) {
+        this.results = results;
     }
 
     public int getOffset() {

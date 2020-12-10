@@ -1,41 +1,41 @@
 package Models.Food.Nutrition;
-import Models.Food.Nutrition.Detailed.foodNutrients;
+import Models.Food.Nutrition.Detailed.nutrients;
 
 
 public class foodNutritionCentral {
-    private foodNutrients[] foodNutrients;
-    private foodCaloricBreakdown foodCaloricBreakdown;
-    private foodWeightPerServing foodWeightPerServing;
+    private nutrients[] nutrients;
+    private caloricBreakdown caloricBreakdown;
+    private weightPerServing weightPerServing;
 
-    public foodNutritionCentral(Models.Food.Nutrition.Detailed.foodNutrients[] foodNutrients,
-                                Models.Food.Nutrition.foodCaloricBreakdown foodCaloricBreakdown,
-                                Models.Food.Nutrition.foodWeightPerServing foodWeightPerServing) {
-        setFoodNutrients(foodNutrients);
-        setFoodCaloricBreakdown(foodCaloricBreakdown);
-        setFoodWeightPerServing(foodWeightPerServing);
+    public foodNutritionCentral(nutrients[] nutrients,
+                                caloricBreakdown caloricBreakdown,
+                                weightPerServing weightPerServing) {
+        setNutrients(nutrients);
+        setCaloricBreakdown(caloricBreakdown);
+        setWeightPerServing(weightPerServing);
     }
 
-    public Models.Food.Nutrition.Detailed.foodNutrients[] getFoodNutrients() {
-        return foodNutrients;
+    public nutrients[] getNutrients() {
+        return nutrients;
     }
 
-    public void setFoodNutrients(Models.Food.Nutrition.Detailed.foodNutrients[] foodNutrients) {
-        this.foodNutrients = foodNutrients;
+    public void setNutrients(nutrients[] nutrients) {
+        this.nutrients = nutrients;
     }
 
-    public Models.Food.Nutrition.foodCaloricBreakdown getFoodCaloricBreakdown() {
-        return foodCaloricBreakdown;
+    public caloricBreakdown getCaloricBreakdown() {
+        return caloricBreakdown;
     }
 
-    public void setFoodCaloricBreakdown(Models.Food.Nutrition.foodCaloricBreakdown foodCaloricBreakdown) {
-        this.foodCaloricBreakdown = foodCaloricBreakdown;
+    public void setCaloricBreakdown(caloricBreakdown caloricBreakdown) {
+        this.caloricBreakdown = caloricBreakdown;
     }
 
-    public Models.Food.Nutrition.foodWeightPerServing getFoodWeightPerServing() {
-        return foodWeightPerServing;
+    public weightPerServing getWeightPerServing() {
+        return weightPerServing;
     }
 
-    public void setFoodWeightPerServing(Models.Food.Nutrition.foodWeightPerServing foodWeightPerServing) {
-        this.foodWeightPerServing = foodWeightPerServing;
+    public void setWeightPerServing(weightPerServing weightPerServing) {
+        this.weightPerServing = weightPerServing;
     }
 }

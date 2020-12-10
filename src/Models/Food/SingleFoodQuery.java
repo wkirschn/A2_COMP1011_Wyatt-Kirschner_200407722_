@@ -1,6 +1,7 @@
 package Models.Food;
 import Models.Food.Nutrition.foodNutritionCentral;
 
+import Models.Food.Nutrition.nutrition;
 import com.google.gson.annotations.SerializedName;
 
 // https://api.spoonacular.com/food/ingredients/9003/information?apiKey=5fec8b624e914a81b3e359d38938c941
@@ -18,18 +19,21 @@ public class SingleFoodQuery {
     @SerializedName("image")
     private String image;
 
-    private foodNutritionCentral foodNutritionCentral;
+    private Models.Food.Nutrition.nutrition nutrition;
 
 
-    public SingleFoodQuery(String originalName, String amount, String image, Models.Food.Nutrition.foodNutritionCentral foodNutritionCentral) {
+    public SingleFoodQuery(String originalName, String amount, String image, Models.Food.Nutrition.nutrition nutrition) {
         setOriginalName(originalName);
         setAmount(amount);
         setImage(image);
-        setFoodNutritionCentral(foodNutritionCentral);
+        setNutrition(nutrition);
     }
+
+
+
     /*
-        Needed to convert to make it easier to deal with if required
-     */
+            Needed to convert to make it easier to deal with if required
+         */
     public double getAmountInDouble()
     {
         return Double.parseDouble(getAmount());
@@ -59,11 +63,11 @@ public class SingleFoodQuery {
         this.image = image;
     }
 
-    public Models.Food.Nutrition.foodNutritionCentral getFoodNutritionCentral() {
-        return foodNutritionCentral;
+    public Models.Food.Nutrition.nutrition getNutrition() {
+        return nutrition;
     }
 
-    public void setFoodNutritionCentral(Models.Food.Nutrition.foodNutritionCentral foodNutritionCentral) {
-        this.foodNutritionCentral = foodNutritionCentral;
+    public void setNutrition(Models.Food.Nutrition.nutrition nutrition) {
+        this.nutrition = nutrition;
     }
 }

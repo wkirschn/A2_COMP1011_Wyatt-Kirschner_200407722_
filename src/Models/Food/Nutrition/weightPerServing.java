@@ -6,14 +6,14 @@ import com.google.gson.annotations.SerializedName;
 "amount": 10,
       "unit": "g"
  */
-public class foodWeightPerServing {
+public class weightPerServing {
     @SerializedName("amount")
     private int amount;
 
     @SerializedName("unit")
     private String unit;
 
-    public foodWeightPerServing(int amount, String unit) {
+    public weightPerServing(int amount, String unit) {
         setAmount(amount);
         setUnit(unit);
     }

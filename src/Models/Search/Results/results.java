@@ -12,7 +12,7 @@ package Models.Search.Results;
 
 import com.google.gson.annotations.SerializedName;
 
-public class searchResults {
+public class results {
     @SerializedName("id")
     private int id;
 
@@ -22,7 +22,7 @@ public class searchResults {
     @SerializedName("image")
     private String image;
 
-    public searchResults(int id, String name, String image) {
+    public results(int id, String name, String image) {
         setId(id);
         setName(name);
         setImage(image);

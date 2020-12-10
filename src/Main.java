@@ -29,7 +29,7 @@ public class Main extends Application {
     public static void main(String[] args) {
         //launch(args);
 
-        FoodUtility.getFoodResults(new File("src/Utilities/cookieSearch.json"));
+        FoodUtility.getFoodResults(new File("src/Utilities/food.json"));
 
     }
 }
