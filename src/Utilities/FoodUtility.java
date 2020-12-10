@@ -1,3 +1,5 @@
+package Utilities;
+
 /*package Utilities;
 // API KEY: 5fec8b624e914a81b3e359d38938c941 // https://api.spoonacular.com/?apiKey=5fec8b624e914a81b3e359d38938c941
 // The initial request is ?, followed by &
@@ -18,3 +20,30 @@ public class FoodUtility {
     public static ArrayList<>
 
 }*/
+import Utilities.*;
+import com.google.gson.Gson;
+
+import Models.Search.SpoonacularJsonResponse;
+import com.google.gson.stream.JsonReader;
+
+import java.io.File;
+import java.io.FileReader;
+
+public class FoodUtility {
+
+    public static SpoonacularJsonResponse getFoodResults(File jsonFile) {
+        Gson gson = new Gson();
+
+        try (
+                FileReader fileReader = new FileReader(jsonFile);
+                JsonReader jsonReader = new JsonReader(fileReader);
+        ) {
+            SpoonacularJsonResponse searchResult = gson.fromJson(jsonReader, SpoonacularJsonResponse.class);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return
+
+    }
+}

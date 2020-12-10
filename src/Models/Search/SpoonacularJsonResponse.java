@@ -9,12 +9,12 @@ public class SpoonacularJsonResponse {
 
     private Models.Search.Results.searchResults[] searchResults;
 
-    //May not need since I can request for all
+    //May not need since I can request for all. Starts at 0 but if I wanted to, set to 10, 20, 30 for pages
 
     @SerializedName("offset")
     private int offset;
 
-    // How many are being shown
+    // How many are being shown, should make max 100 since it's easier than pages
 
     @SerializedName("number")
     private int number;
