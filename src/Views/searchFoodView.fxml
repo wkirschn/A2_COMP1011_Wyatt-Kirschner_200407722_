@@ -119,12 +119,12 @@
             <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
          </padding>
          <children>
-            <ImageView fitHeight="241.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="322.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Images/Nutritious.png" />
                </image>
             </ImageView>
-            <GridPane prefHeight="256.0" prefWidth="296.0">
+            <GridPane prefHeight="318.0" prefWidth="278.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>

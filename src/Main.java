@@ -1,4 +1,5 @@
 import Models.Search.SpoonacularJsonResponse;
+import Utilities.FoodUtility;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 import javafx.application.Application;
@@ -8,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
@@ -25,24 +27,9 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        launch(args);
-        try {
-            FileReader fileReader = new FileReader("src/cookieSearch.json");
-            JsonReader jsonReader = new JsonReader(fileReader);
-            {
-                Gson gson = new Gson();
-                SpoonacularJsonResponse spoonacularJsonResponse = gson.fromJson(jsonReader, SpoonacularJsonResponse.class);
-            }
+        //launch(args);
 
-        }
-
-
-
-
-        catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
+        FoodUtility.getFoodResults(new File("src/Utilities/cookieSearch.json"));
 
     }
 }

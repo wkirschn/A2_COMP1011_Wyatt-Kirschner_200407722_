@@ -33,17 +33,19 @@ public class FoodUtility {
 
     public static SpoonacularJsonResponse getFoodResults(File jsonFile) {
         Gson gson = new Gson();
+        SpoonacularJsonResponse searchResult = null;
 
         try (
                 FileReader fileReader = new FileReader(jsonFile);
                 JsonReader jsonReader = new JsonReader(fileReader);
         ) {
-            SpoonacularJsonResponse searchResult = gson.fromJson(jsonReader, SpoonacularJsonResponse.class);
+            searchResult = gson.fromJson(jsonReader, SpoonacularJsonResponse.class);
+            System.out.println(searchResult);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return
+        return searchResult;
 
     }
 }
