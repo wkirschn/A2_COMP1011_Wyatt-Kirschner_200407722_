@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 
 public class Main extends Application {
 
@@ -29,7 +30,21 @@ public class Main extends Application {
     public static void main(String[] args) {
         //launch(args);
 
-        FoodUtility.getFoodResults(new File("src/Utilities/food.json"));
+        try {
+            FoodUtility.SpoonacularJsonResponse("sugar");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            FoodUtility.foodNutritionCentral("19335");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 }

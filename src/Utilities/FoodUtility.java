@@ -29,10 +29,47 @@ import com.google.gson.stream.JsonReader;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class FoodUtility {
 
-    public static SingleFoodQuery getFoodResults(File jsonFile) {
+    public static SpoonacularJsonResponse getSearchResults(File jsonFile) {
+        Gson gson = new Gson();
+        SpoonacularJsonResponse searchResult = null;
+
+        try (
+                FileReader fileReader = new FileReader(jsonFile);
+                JsonReader jsonReader = new JsonReader(fileReader);
+        ) {
+            searchResult = gson.fromJson(jsonReader, SpoonacularJsonResponse.class);
+            System.out.println(searchResult);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return searchResult;
+
+    }
+
+
+
+
+
+    /**
+     * Used to retrieve information from the JSON file
+     * @param jsonFile - used to read the information from the JSON
+     * @return - the result of the search
+     */
+
+
+
+   public static SingleFoodQuery getFoodResults(File jsonFile) {
         Gson gson = new Gson();
         SingleFoodQuery searchResult = null;
 
@@ -47,6 +84,44 @@ public class FoodUtility {
             e.printStackTrace();
         }
         return searchResult;
+
+    }
+
+    /**
+     * This method will parse a request for the search for an item
+     * @param searchText
+     * @return JSON request with the name, image, and id from the results class / number of results, offset, total results
+     */
+
+   public static void SpoonacularJsonResponse (String searchText) throws IOException, InterruptedException {
+
+       String apiKey = "&apiKey=5fec8b624e914a81b3e359d38938c941";
+        String uri = "https://api.spoonacular.com/food/ingredients/search?query=" + searchText + "&number=100" + apiKey;
+        //String uri = "https://api.spoonacular.com/food/ingredients/search?apiKey=5fec8b624e914a81b3e359d38938c941query=cookie&";
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder().uri(URI.create(uri)).build();
+
+        String jsonLocation = "src/Utilities/search.json";
+
+        HttpResponse<Path> response = client.send(request, HttpResponse.BodyHandlers.ofFile(Paths.get(jsonLocation)));
+
+       SpoonacularJsonResponse searchResponse = getSearchResults(new File(jsonLocation));
+
+    }
+
+    public static void foodNutritionCentral(String foodId) throws IOException, InterruptedException {
+
+        String apiKey = "&apiKey=5fec8b624e914a81b3e359d38938c941";
+        String uri = "https://api.spoonacular.com/food/ingredients/" + foodId + "/information?amount=1" + apiKey;
+        //String uri = "https://api.spoonacular.com/food/ingredients/search?apiKey=5fec8b624e914a81b3e359d38938c941query=cookie&";
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder().uri(URI.create(uri)).build();
+
+        String jsonLocation = "src/Utilities/food.json";
+
+        HttpResponse<Path> response = client.send(request, HttpResponse.BodyHandlers.ofFile(Paths.get(jsonLocation)));
+
+        SingleFoodQuery foodResponse = getFoodResults(new File(jsonLocation));
 
     }
 }
