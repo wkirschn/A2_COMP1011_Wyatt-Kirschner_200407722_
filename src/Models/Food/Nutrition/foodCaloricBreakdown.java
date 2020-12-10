@@ -24,6 +24,21 @@ public class foodCaloricBreakdown {
         setPercentCarbs(percentCarbs);
     }
 
+    public String percentProteinToString()
+    {
+        return String.valueOf(getPercentProtein());
+    }
+
+    public String percentFatToString()
+    {
+        return String.valueOf(getPercentFat());
+    }
+
+    public String percentCarbsToString()
+    {
+        return String.valueOf(getPercentCarbs());
+    }
+
     public double getPercentProtein() {
         return percentProtein;
     }

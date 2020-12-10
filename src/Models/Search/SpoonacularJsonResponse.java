@@ -9,6 +9,8 @@ public class SpoonacularJsonResponse {
 
     private Models.Search.Results.searchResults[] searchResults;
 
+    //May not need since I can request for all
+
     @SerializedName("offset")
     private int offset;
 
@@ -29,6 +31,24 @@ public class SpoonacularJsonResponse {
         setNumber(number);
         setTotalResults(totalResults);
     }
+
+    /*
+        Will be easier to show Results being shown
+     */
+
+    private String numberToString() {
+        return String.valueOf(getNumber());
+    }
+
+     /*
+        Will be easier for showing the total results
+     */
+
+    private String totalResultsToString() {
+        return String.valueOf(getTotalResults());
+    }
+
+
 
     public Models.Search.Results.searchResults[] getSearchResults() {
         return searchResults;

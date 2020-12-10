@@ -18,6 +18,10 @@ public class foodWeightPerServing {
         setUnit(unit);
     }
 
+    public String amountToString() {
+        return String.valueOf(amount);
+    }
+
     public int getAmount() {
         return amount;
     }

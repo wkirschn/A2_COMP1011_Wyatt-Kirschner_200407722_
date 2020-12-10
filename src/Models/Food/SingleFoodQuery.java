@@ -5,6 +5,9 @@ import com.google.gson.annotations.SerializedName;
 
 // https://api.spoonacular.com/food/ingredients/9003/information?apiKey=5fec8b624e914a81b3e359d38938c941
 // https://api.spoonacular.com/food/ingredients/9003/information?amount=1&apiKey=5fec8b624e914a81b3e359d38938c941
+
+// No conversion needed
+
 public class SingleFoodQuery {
     @SerializedName("originalName")
     private String originalName;
@@ -23,6 +26,13 @@ public class SingleFoodQuery {
         setAmount(amount);
         setImage(image);
         setFoodNutritionCentral(foodNutritionCentral);
+    }
+    /*
+        Needed to convert to make it easier to deal with if required
+     */
+    public double getAmountInDouble()
+    {
+        return Double.parseDouble(getAmount());
     }
 
     public String getOriginalName() {
