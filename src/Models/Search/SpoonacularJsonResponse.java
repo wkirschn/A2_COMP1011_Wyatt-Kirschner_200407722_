@@ -32,6 +32,8 @@ public class SpoonacularJsonResponse {
         setTotalResults(totalResults);
     }
 
+
+
     /*
         Will be easier to show Results being shown
      */
