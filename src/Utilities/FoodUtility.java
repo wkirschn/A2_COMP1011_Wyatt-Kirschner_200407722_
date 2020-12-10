@@ -29,6 +29,12 @@ import com.google.gson.stream.JsonReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class FoodUtility {
 
@@ -122,7 +128,7 @@ public class FoodUtility {
 
     public static  SpoonacularJsonResponse getSearchResponse (String searchText) throws IOException, InterruptedException {
         String jsonLocation = "src/Utilities/search.json";
-     /*   String apiKey = "&apiKey=5fec8b624e914a81b3e359d38938c941";
+       String apiKey = "&apiKey=5fec8b624e914a81b3e359d38938c941";
         String uri = "https://api.spoonacular.com/food/ingredients/search?query=" + searchText + "&number=100" + apiKey;
         //String uri = "https://api.spoonacular.com/food/ingredients/search?apiKey=5fec8b624e914a81b3e359d38938c941query=cookie&";
         HttpClient client = HttpClient.newHttpClient();
@@ -130,10 +136,15 @@ public class FoodUtility {
 
 
 
-        HttpResponse<Path> response = client.send(request, HttpResponse.BodyHandlers.ofFile(Paths.get(jsonLocation)));*/
+        HttpResponse<Path> response = client.send(request, HttpResponse.BodyHandlers.ofFile(Paths.get(jsonLocation)));
 
        SpoonacularJsonResponse searchResponse = getSearchResults(new File(jsonLocation));
        return searchResponse;
+
+        //return getSearchResults(new File(jsonLocation));
+
+
+
     }
 
     public static SingleFoodQuery getFoodQuery (String foodId) throws IOException, InterruptedException {

@@ -1,5 +1,6 @@
 package Controllers;
 
+import Models.Search.Results.results;
 import Models.Search.SpoonacularJsonResponse;
 import Utilities.FoodUtility;
 import javafx.fxml.FXML;
@@ -35,7 +36,7 @@ public class searchFoodController {
     private Label pageLabel;
 
     @FXML
-    private ListView<SpoonacularJsonResponse> searchListView;
+    private ListView<results> searchListView;
 
     @FXML
     private Button clearButton;
@@ -69,17 +70,29 @@ public class searchFoodController {
     @FXML
     private void getFoodItems()  {
         String searchText = searchTextField.getText();
-        try{
-            SpoonacularJsonResponse response = FoodUtility.getSearchResponse(searchText);
-            List<SpoonacularJsonResponse> food = Arrays.asList(response);
-            searchListView.getItems().addAll((food));
+        searchListView.getItems().clear();
+        try {
+            SpoonacularJsonResponse searchResponse = FoodUtility.getSearchResponse(searchText);
+            List<results> food = Arrays.asList(searchResponse.getSearchResults());
+            searchListView.getItems().addAll(food);
+            totalResultsLabel.setText("Rows Returned: " + searchResponse.getTotalResults());
 
+        }
+        catch (IllegalArgumentException e) {
+            e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+
+    }
+
+   @FXML
+    private void clearSearch()
+    {
+        searchListView.getItems().clear();
     }
 
 }

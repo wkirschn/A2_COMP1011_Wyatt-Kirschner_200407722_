@@ -45,7 +45,7 @@
                         <Insets bottom="5.0" left="25.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Button fx:id="searchButton" alignment="CENTER" mnemonicParsing="false" text="Search" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="searchButton" alignment="CENTER" mnemonicParsing="false" onAction="#getFoodItems" text="Search" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets left="25.0" />
                      </GridPane.margin>
@@ -83,7 +83,7 @@
                </children>
             </GridPane>
             <ListView fx:id="searchListView" prefHeight="268.0" prefWidth="496.0" />
-            <Button fx:id="clearButton" mnemonicParsing="false" text="Clear Search">
+            <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearSearch" text="Clear Search">
                <VBox.margin>
                   <Insets bottom="5.0" left="25.0" right="25.0" top="25.0" />
                </VBox.margin>
