@@ -12,4 +12,25 @@ public class foodWeightPerServing {
 
     @SerializedName("unit")
     private String unit;
+
+    public foodWeightPerServing(int amount, String unit) {
+        setAmount(amount);
+        setUnit(unit);
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
 }

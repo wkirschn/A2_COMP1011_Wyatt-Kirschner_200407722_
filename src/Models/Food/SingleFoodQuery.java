@@ -18,4 +18,42 @@ public class SingleFoodQuery {
     private foodNutritionCentral foodNutritionCentral;
 
 
+    public SingleFoodQuery(String originalName, String amount, String image, Models.Food.Nutrition.foodNutritionCentral foodNutritionCentral) {
+        setOriginalName(originalName);
+        setAmount(amount);
+        setImage(image);
+        setFoodNutritionCentral(foodNutritionCentral);
+    }
+
+    public String getOriginalName() {
+        return originalName;
+    }
+
+    public void setOriginalName(String originalName) {
+        this.originalName = originalName;
+    }
+
+    public String getAmount() {
+        return amount;
+    }
+
+    public void setAmount(String amount) {
+        this.amount = amount;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Models.Food.Nutrition.foodNutritionCentral getFoodNutritionCentral() {
+        return foodNutritionCentral;
+    }
+
+    public void setFoodNutritionCentral(Models.Food.Nutrition.foodNutritionCentral foodNutritionCentral) {
+        this.foodNutritionCentral = foodNutritionCentral;
+    }
 }
