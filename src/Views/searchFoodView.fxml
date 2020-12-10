@@ -40,12 +40,12 @@
                   <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
                </VBox.margin>
                <children>
-                  <TextField alignment="CENTER" prefHeight="25.0" prefWidth="284.0" GridPane.rowIndex="1">
+                  <TextField fx:id="searchTextField" alignment="CENTER" prefHeight="25.0" prefWidth="284.0" promptText="Search for Food Item..." GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets bottom="5.0" left="25.0" right="5.0" top="5.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Button alignment="CENTER" mnemonicParsing="false" text="Search" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="searchButton" alignment="CENTER" mnemonicParsing="false" text="Search" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets left="25.0" />
                      </GridPane.margin>
@@ -82,7 +82,7 @@
                   </Label>
                </children>
             </GridPane>
-            <ListView prefHeight="268.0" prefWidth="496.0" />
+            <ListView fx:id="searchListView" prefHeight="268.0" prefWidth="496.0" />
             <Button fx:id="clearButton" mnemonicParsing="false" text="Clear Search">
                <VBox.margin>
                   <Insets bottom="5.0" left="25.0" right="25.0" top="25.0" />
@@ -100,12 +100,12 @@
                   <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
                </VBox.margin>
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" text="Previous Page" textAlignment="CENTER">
+                  <Button fx:id="previousButton" alignment="CENTER" mnemonicParsing="false" text="Previous Page" textAlignment="CENTER">
                      <GridPane.margin>
                         <Insets left="84.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" text="Next Page" textAlignment="CENTER" GridPane.columnIndex="1">
+                  <Button fx:id="nextButton" alignment="CENTER" mnemonicParsing="false" text="Next Page" textAlignment="CENTER" GridPane.columnIndex="1">
                      <GridPane.margin>
                         <Insets left="105.0" />
                      </GridPane.margin>
@@ -119,7 +119,7 @@
             <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
          </padding>
          <children>
-            <ImageView fitHeight="322.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="searchImage" fitHeight="322.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Images/Nutritious.png" />
                </image>

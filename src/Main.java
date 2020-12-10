@@ -28,9 +28,11 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        //launch(args);
+        launch(args);
 
-        try {
+/*
+
+       try {
             FoodUtility.getSearchResponse("waffle");
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,6 +47,9 @@ public class Main extends Application {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+*/
+
+
 
     }
 }
