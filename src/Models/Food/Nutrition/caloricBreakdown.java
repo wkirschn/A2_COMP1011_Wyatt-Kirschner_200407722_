@@ -26,18 +26,15 @@ public class caloricBreakdown {
         setPercentCarbs(percentCarbs);
     }
 
-    public String percentProteinToString()
-    {
+    public String percentProteinToString() {
         return String.valueOf(getPercentProtein());
     }
 
-    public String percentFatToString()
-    {
+    public String percentFatToString() {
         return String.valueOf(getPercentFat());
     }
 
-    public String percentCarbsToString()
-    {
+    public String percentCarbsToString() {
         return String.valueOf(getPercentCarbs());
     }
 

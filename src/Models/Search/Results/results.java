@@ -84,8 +84,7 @@ public class results {
         this.image = image;
     }
 
-    public String toString()
-    {
+    public String toString() {
         return String.format(getName());
     }
 }

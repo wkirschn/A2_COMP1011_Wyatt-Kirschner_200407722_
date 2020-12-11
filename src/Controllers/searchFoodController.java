@@ -57,7 +57,7 @@ public class searchFoodController implements Initializable {
     private Label totalResultsLabel;
 
     @FXML
-    private ListView<results> searchListView;
+    private ListView < results > searchListView;
 
     @FXML
     private Button clearButton;
@@ -84,13 +84,11 @@ public class searchFoodController implements Initializable {
 
 
 
-    private String fixSearchString(String getText)
-    {
-        if(getText.contains(" ")) {
-           getText =  getText.replace(' ', '+');
+    private String fixSearchString(String getText) {
+        if (getText.contains(" ")) {
+            getText = getText.replace(' ', '+');
 
-        }
-        else {
+        } else {
 
 
         }
@@ -108,9 +106,9 @@ public class searchFoodController implements Initializable {
 
 
     @FXML
-    private void getFoodItems()  {
+    private void getFoodItems() {
         // Checks to see if empty
-        if(!searchTextField.getText().isEmpty()) {
+        if (!searchTextField.getText().isEmpty()) {
             msgLabel.setText("");
             String searchText = searchTextField.getText();
             String newSearchText = fixSearchString(searchText);
@@ -118,7 +116,7 @@ public class searchFoodController implements Initializable {
 
             try {
                 SpoonacularJsonResponse searchResponse = FoodUtility.getSearchResponse(newSearchText);
-                List<results> food = Arrays.asList(searchResponse.getSearchResults());
+                List < results > food = Arrays.asList(searchResponse.getSearchResults());
                 searchListView.getItems().addAll(food);
                 setSearchLabels(searchResponse.getTotalResults(), searchTextField.getText());
 
@@ -133,16 +131,13 @@ public class searchFoodController implements Initializable {
             }
 
 
-        }
-        else
-        {
+        } else {
             msgLabel.setText("Please enter an item to search!");
         }
     }
 
-   @FXML
-    private void clearSearch()
-    {
+    @FXML
+    private void clearSearch() {
         searchImage.setImage(new Image("Images/Nutritious.png"));
         foodLabel.setText("Food Name");
         servingLabel.setText("Serving Size");
@@ -156,7 +151,7 @@ public class searchFoodController implements Initializable {
     }
 
     private void setSearchLabels(int totalResults, String searchName) {
-        if(!searchListView.getItems().isEmpty())
+        if (!searchListView.getItems().isEmpty())
 
         {
             enterFoodLabel.setText("");
@@ -174,12 +169,12 @@ public class searchFoodController implements Initializable {
     @FXML
     private void changeMoreInformation(ActionEvent event) throws IOException {
 
-       /* Parent searchParent = FXMLLoader.load(getClass().getResource("Views/detailedFoodView.fxml"));
-        Scene searchScene = new Scene(searchParent);
+        /* Parent searchParent = FXMLLoader.load(getClass().getResource("Views/detailedFoodView.fxml"));
+         Scene searchScene = new Scene(searchParent);
 
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        window.setScene(searchScene);
-        window.show();*/
+         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+         window.setScene(searchScene);
+         window.show();*/
 
 
         Parent root = FXMLLoader.load(getClass().getResource("Views/detailedFoodView.fxml"));
@@ -197,7 +192,7 @@ public class searchFoodController implements Initializable {
 
 
 
-// transitionScene(event, "databaseTable.fxml", 1100, 450, "RePsychle - View Table");
+    // transitionScene(event, "databaseTable.fxml", 1100, 450, "RePsychle - View Table");
 
 
 
@@ -208,42 +203,42 @@ public class searchFoodController implements Initializable {
 
 
 
-        searchListView.getSelectionModel().selectedItemProperty().addListener((obs, oldValue, foodSelected)-> {
-            searchImage.setImage(new Image(buildImage(foodSelected.getImage())));
-            foodLabel.setText(foodSelected.getName().toUpperCase());
-            //servingLabel.setText();10118192
-                    try {
-                        SingleFoodQuery getFood = FoodUtility.getFoodQuery(foodSelected.getIdToString());
-                        //List<nutrition> getSomething = Array.asList(getFood.getNutrition().getCaloricBreakdown().g);
-                        int servingAmount = getFood.getNutrition().getWeightPerServing().getAmount();
-                        String servingUnit = getFood.getNutrition().getWeightPerServing().getUnit();
-                       // List<nutrients> calories = Arrays.asList(getFood.getNutrition().getNutrients());
+        searchListView.getSelectionModel().selectedItemProperty().addListener((obs, oldValue, foodSelected) -> {
+                searchImage.setImage(new Image(buildImage(foodSelected.getImage())));
+        foodLabel.setText(foodSelected.getName().toUpperCase());
+        //servingLabel.setText();10118192
+        try {
+            SingleFoodQuery getFood = FoodUtility.getFoodQuery(foodSelected.getIdToString());
+            //List<nutrition> getSomething = Array.asList(getFood.getNutrition().getCaloricBreakdown().g);
+            int servingAmount = getFood.getNutrition().getWeightPerServing().getAmount();
+            String servingUnit = getFood.getNutrition().getWeightPerServing().getUnit();
+            // List<nutrients> calories = Arrays.asList(getFood.getNutrition().getNutrients());
 
-                        servingLabel.setText(String.valueOf(servingAmount) + " " + servingUnit);
+            servingLabel.setText(String.valueOf(servingAmount) + " " + servingUnit);
 
-                      List<nutrients> calories = Arrays.asList(getFood.getNutrition().getNutrients());
+            List < nutrients > calories = Arrays.asList(getFood.getNutrition().getNutrients());
 
-                      calorieLabel.setText(String.valueOf(calories.get(0).getAmount()));
-
-
-
-
-                    } catch (IllegalArgumentException e) {
-                        e.printStackTrace();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+            calorieLabel.setText(String.valueOf(calories.get(0).getAmount()));
 
 
 
 
-
-
-
-
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
+
+
+
+
+
+
+
+            }
 
         );
 

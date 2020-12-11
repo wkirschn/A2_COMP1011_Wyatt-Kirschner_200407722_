@@ -1,4 +1,3 @@
-
 /*
     Name:   Wyatt Kirschner
     StudentID:  200407722
@@ -50,8 +49,7 @@ public class FoodUtility {
         SpoonacularJsonResponse searchResult = null;
 
         try (
-                FileReader fileReader = new FileReader(jsonFile);
-                JsonReader jsonReader = new JsonReader(fileReader);
+                FileReader fileReader = new FileReader(jsonFile); JsonReader jsonReader = new JsonReader(fileReader);
         ) {
             searchResult = gson.fromJson(jsonReader, SpoonacularJsonResponse.class);
             System.out.println(searchResult);
@@ -72,14 +70,13 @@ public class FoodUtility {
 
 
 
-   public static SingleFoodQuery getFoodResults(File jsonFile) {
+    public static SingleFoodQuery getFoodResults(File jsonFile) {
 
         Gson gson = new Gson();
         SingleFoodQuery searchResult = null;
 
         try (
-                FileReader fileReader = new FileReader(jsonFile);
-                JsonReader jsonReader = new JsonReader(fileReader);
+                FileReader fileReader = new FileReader(jsonFile); JsonReader jsonReader = new JsonReader(fileReader);
         ) {
             searchResult = gson.fromJson(jsonReader, SingleFoodQuery.class);
             System.out.println(searchResult);
@@ -93,15 +90,15 @@ public class FoodUtility {
 
 
 
-    public static  SpoonacularJsonResponse getSearchResponse (String searchText) throws IOException, InterruptedException {
+    public static SpoonacularJsonResponse getSearchResponse(String searchText) throws IOException, InterruptedException {
         String jsonLocation = "src/Utilities/search.json";
-     String apiKey = "&apiKey=5fec8b624e914a81b3e359d38938c941";
+        String apiKey = "&apiKey=5fec8b624e914a81b3e359d38938c941";
         String uri = "https://api.spoonacular.com/food/ingredients/search?query=" + searchText + "&number=100" + apiKey;
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(uri)).build();
-        HttpResponse<Path> response = client.send(request, HttpResponse.BodyHandlers.ofFile(Paths.get(jsonLocation)));
-       SpoonacularJsonResponse searchResponse = getSearchResults(new File(jsonLocation));
-       return searchResponse;
+        HttpResponse < Path > response = client.send(request, HttpResponse.BodyHandlers.ofFile(Paths.get(jsonLocation)));
+        SpoonacularJsonResponse searchResponse = getSearchResults(new File(jsonLocation));
+        return searchResponse;
 
 
 
@@ -109,9 +106,9 @@ public class FoodUtility {
 
     }
 
-    public static SingleFoodQuery getFoodQuery (String foodId) throws IOException, InterruptedException {
+    public static SingleFoodQuery getFoodQuery(String foodId) throws IOException, InterruptedException {
         String jsonLocation = "src/Utilities/food.json";
-       String apiKey = "&apiKey=5fec8b624e914a81b3e359d38938c941";
+        String apiKey = "&apiKey=5fec8b624e914a81b3e359d38938c941";
         String uri = "https://api.spoonacular.com/food/ingredients/" + foodId + "/information?amount=1" + apiKey;
 
         HttpClient client = HttpClient.newHttpClient();
@@ -119,9 +116,9 @@ public class FoodUtility {
 
 
 
-        HttpResponse<Path> response = client.send(request, HttpResponse.BodyHandlers.ofFile(Paths.get(jsonLocation)));
+        HttpResponse < Path > response = client.send(request, HttpResponse.BodyHandlers.ofFile(Paths.get(jsonLocation)));
 
-        SingleFoodQuery foodQuery =  getFoodResults(new File(jsonLocation));
+        SingleFoodQuery foodQuery = getFoodResults(new File(jsonLocation));
         return foodQuery;
 
     }

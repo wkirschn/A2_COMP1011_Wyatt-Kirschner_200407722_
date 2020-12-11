@@ -30,7 +30,7 @@ public class SpoonacularJsonResponse {
     @SerializedName("totalResults")
     private int totalResults;
 
-   public SpoonacularJsonResponse(Models.Search.Results.results[] results,
+    public SpoonacularJsonResponse(Models.Search.Results.results[] results,
                                    int offset, int number, int totalResults) {
         setSearchResults(results);
         setOffset(offset);
@@ -48,9 +48,9 @@ public class SpoonacularJsonResponse {
         return String.valueOf(getNumber());
     }
 
-     /*
-        Will be easier for showing the total results
-     */
+    /*
+       Will be easier for showing the total results
+    */
 
     private String totalResultsToString() {
         return String.valueOf(getTotalResults());

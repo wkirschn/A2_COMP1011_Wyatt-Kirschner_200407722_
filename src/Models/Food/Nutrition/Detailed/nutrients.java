@@ -1,10 +1,11 @@
-package Models.Food.Nutrition.Detailed;
-
 /*
-"title": "Calories",
-      "amount": 50.2,
-      "unit": "kcal",
+    Name:       Wyatt Kirschner
+    StudentID:  200407722
+    Date:       12/10/20
+    Project:    Nutrious - A macro finder using Spoonacular API
  */
+
+package Models.Food.Nutrition.Detailed;
 
 import com.google.gson.annotations.SerializedName;
 

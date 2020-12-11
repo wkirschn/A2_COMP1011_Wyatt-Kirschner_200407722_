@@ -37,8 +37,7 @@ public class SingleFoodQuery {
         setNutrition(nutrition);
     }
 
-    public double getAmountInDouble()
-    {
+    public double getAmountInDouble() {
         return Double.parseDouble(getAmount());
     }
 

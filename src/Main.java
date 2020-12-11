@@ -18,7 +18,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-       // Parent root = FXMLLoader.load(getClass().getResource("Views/searchFoodView.fxml"));
+        // Parent root = FXMLLoader.load(getClass().getResource("Views/searchFoodView.fxml"));
         Parent root = FXMLLoader.load(getClass().getResource("Views/searchFoodView.fxml"));
         primaryStage.setScene(new Scene(root, 1000, 700)); //800, 600
         primaryStage.getIcons().add(new Image("Images/Nutritious_icon.png"));
@@ -35,4 +35,3 @@ public class Main extends Application {
 
     }
 }
-

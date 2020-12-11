@@ -9,10 +9,6 @@ package Models.Food.Nutrition;
 
 import com.google.gson.annotations.SerializedName;
 
-/*
-"amount": 10,
-      "unit": "g"
- */
 public class weightPerServing {
     @SerializedName("amount")
     private int amount;
