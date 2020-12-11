@@ -1,4 +1,10 @@
-package Utilities;
+
+/*
+    Name:   Wyatt Kirschner
+    StudentID:  200407722
+    Date: 12/10/20
+    Project: Nutrious - A macro finder using Spoonacular API
+ */
 
 /*package Utilities;
 // API KEY: 5fec8b624e914a81b3e359d38938c941 // https://api.spoonacular.com/?apiKey=5fec8b624e914a81b3e359d38938c941
@@ -20,6 +26,7 @@ public class FoodUtility {
     public static ArrayList<>
 
 }*/
+package Utilities;
 import Models.Food.SingleFoodQuery;
 import com.google.gson.Gson;
 
@@ -57,9 +64,6 @@ public class FoodUtility {
     }
 
 
-
-
-
     /**
      * Used to retrieve information from the JSON file
      * @param jsonFile - used to read the information from the JSON
@@ -87,61 +91,19 @@ public class FoodUtility {
 
     }
 
-    /**
-     * This method will parse a request for the search for an item
-     * @param searchText
-     * @return JSON request with the name, image, and id from the results class / number of results, offset, total results
-     */
 
-  /* public static SpoonacularJsonResponse searchResponse (String searchText) throws IOException, InterruptedException {
-       String jsonLocation = "src/Utilities/search.json";
-     String apiKey = "&apiKey=5fec8b624e914a81b3e359d38938c941";
-        String uri = "https://api.spoonacular.com/food/ingredients/search?query=" + searchText + "&number=100" + apiKey;
-        //String uri = "https://api.spoonacular.com/food/ingredients/search?apiKey=5fec8b624e914a81b3e359d38938c941query=cookie&";
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder().uri(URI.create(uri)).build();
-
-
-
-        HttpResponse<Path> response = client.send(request, HttpResponse.BodyHandlers.ofFile(Paths.get(jsonLocation)));
-
-       return getSearchResults(new File(jsonLocation));
-
-    }
-
-    public static SingleFoodQuery nutritionResponse (String foodId) throws IOException, InterruptedException {
-        String jsonLocation = "src/Utilities/food.json";
-   String apiKey = "&apiKey=5fec8b624e914a81b3e359d38938c941";
-        String uri = "https://api.spoonacular.com/food/ingredients/" + foodId + "/information?amount=1" + apiKey;
-        //String uri = "https://api.spoonacular.com/food/ingredients/search?apiKey=5fec8b624e914a81b3e359d38938c941query=cookie&";
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder().uri(URI.create(uri)).build();
-
-
-
-        HttpResponse<Path> response = client.send(request, HttpResponse.BodyHandlers.ofFile(Paths.get(jsonLocation)));
-
-        return getFoodResults(new File(jsonLocation));
-
-
-    }*/
 
     public static  SpoonacularJsonResponse getSearchResponse (String searchText) throws IOException, InterruptedException {
         String jsonLocation = "src/Utilities/search.json";
-       String apiKey = "&apiKey=5fec8b624e914a81b3e359d38938c941";
+     String apiKey = "&apiKey=5fec8b624e914a81b3e359d38938c941";
         String uri = "https://api.spoonacular.com/food/ingredients/search?query=" + searchText + "&number=100" + apiKey;
-        //String uri = "https://api.spoonacular.com/food/ingredients/search?apiKey=5fec8b624e914a81b3e359d38938c941query=cookie&";
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(uri)).build();
-
-
-
         HttpResponse<Path> response = client.send(request, HttpResponse.BodyHandlers.ofFile(Paths.get(jsonLocation)));
-
        SpoonacularJsonResponse searchResponse = getSearchResults(new File(jsonLocation));
        return searchResponse;
 
-        //return getSearchResults(new File(jsonLocation));
+
 
 
 
@@ -149,15 +111,15 @@ public class FoodUtility {
 
     public static SingleFoodQuery getFoodQuery (String foodId) throws IOException, InterruptedException {
         String jsonLocation = "src/Utilities/food.json";
-       /* String apiKey = "&apiKey=5fec8b624e914a81b3e359d38938c941";
+       String apiKey = "&apiKey=5fec8b624e914a81b3e359d38938c941";
         String uri = "https://api.spoonacular.com/food/ingredients/" + foodId + "/information?amount=1" + apiKey;
-        //String uri = "https://api.spoonacular.com/food/ingredients/search?apiKey=5fec8b624e914a81b3e359d38938c941query=cookie&";
+
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(uri)).build();
 
 
 
-        HttpResponse<Path> response = client.send(request, HttpResponse.BodyHandlers.ofFile(Paths.get(jsonLocation)));*/
+        HttpResponse<Path> response = client.send(request, HttpResponse.BodyHandlers.ofFile(Paths.get(jsonLocation)));
 
         SingleFoodQuery foodQuery =  getFoodResults(new File(jsonLocation));
         return foodQuery;

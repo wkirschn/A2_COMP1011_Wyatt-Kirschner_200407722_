@@ -1,5 +1,12 @@
+/*
+    Name:       Wyatt Kirschner
+    StudentID:  200407722
+    Date:       12/10/20
+    Project:    Nutrious - A macro finder using Spoonacular API
+ */
+
 package Models.Food;
-import Models.Food.Nutrition.foodNutritionCentral;
+
 
 import Models.Food.Nutrition.nutrition;
 import com.google.gson.annotations.SerializedName;
@@ -19,21 +26,17 @@ public class SingleFoodQuery {
     @SerializedName("image")
     private String image;
 
-    private Models.Food.Nutrition.nutrition nutrition;
+    @SerializedName("nutrition")
+    private nutrition nutrition;
 
 
-    public SingleFoodQuery(String originalName, String amount, String image, Models.Food.Nutrition.nutrition nutrition) {
+    public SingleFoodQuery(String originalName, String amount, String image, nutrition nutrition) {
         setOriginalName(originalName);
         setAmount(amount);
         setImage(image);
         setNutrition(nutrition);
     }
 
-
-
-    /*
-            Needed to convert to make it easier to deal with if required
-         */
     public double getAmountInDouble()
     {
         return Double.parseDouble(getAmount());
@@ -63,11 +66,11 @@ public class SingleFoodQuery {
         this.image = image;
     }
 
-    public Models.Food.Nutrition.nutrition getNutrition() {
+    public nutrition getNutrition() {
         return nutrition;
     }
 
-    public void setNutrition(Models.Food.Nutrition.nutrition nutrition) {
+    public void setNutrition(nutrition nutrition) {
         this.nutrition = nutrition;
     }
 }

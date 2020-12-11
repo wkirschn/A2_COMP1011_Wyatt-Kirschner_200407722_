@@ -1,5 +1,11 @@
+/*
+    Name:       Wyatt Kirschner
+    StudentID:  200407722
+    Date:       12/10/20
+    Project:    Nutrious - A macro finder using Spoonacular API
+ */
+
 package Models.Search;
-// TOP -> searchResults
 import Models.Search.Results.results;
 import com.google.gson.annotations.SerializedName;
 

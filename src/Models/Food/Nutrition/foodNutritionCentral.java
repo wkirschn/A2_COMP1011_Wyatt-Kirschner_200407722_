@@ -1,3 +1,10 @@
+/*
+    Name:       Wyatt Kirschner
+    StudentID:  200407722
+    Date:       12/10/20
+    Project:    Nutrious - A macro finder using Spoonacular API
+ */
+
 package Models.Food.Nutrition;
 import Models.Food.Nutrition.Detailed.nutrients;
 

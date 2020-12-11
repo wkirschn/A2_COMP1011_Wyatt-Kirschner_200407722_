@@ -1,10 +1,12 @@
+/*
+    Name:       Wyatt Kirschner
+    StudentID:  200407722
+    Date:       12/10/20
+    Project:    Nutrious - A macro finder using Spoonacular API
+ */
+
 package Models.Food.Nutrition;
 
-/*
-"percentProtein": 4.89,
-      "percentFat": 43.44,
-      "percentCarbs": 51.67
- */
 
 import com.google.gson.annotations.SerializedName;
 
